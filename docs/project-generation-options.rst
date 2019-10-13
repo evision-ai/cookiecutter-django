@@ -1,13 +1,27 @@
 Project Generation Options
 ==========================
 
-project_name:
+full_name:
     Your project's human-readable name, capitals and spaces allowed.
 
+repo_name:
+    The name of repository beholding you project, spaces are not allowed.
+
+project_namespace:
+    Your projects's namespace, which should be a single word without capitals,
+    spaces or dashes.
+
+project_name:
+    Your project's name for PyCharm( or other IDEs) project, spaces and dashes
+    are allowed.
+
 project_slug:
-    Your project's slug without dashes or spaces. Used to name your repo
-    and in other places where a Python-importable version of your project name
-    is needed.
+    Your project's slug without dashes or spaces. Used to name your source
+    package under namespace package and in other places where a
+    Python-importable version of your project name is needed.
+
+    - Your default database name will be {{project_namespace}}-{{project_slug}}
+    - Your base package will be {{project_namespace}}.{{project_slug}}
 
 description:
     Describes your project and gets used in places like ``README.rst`` and such.
@@ -28,11 +42,11 @@ version:
 open_source_license:
     A software license for the project. The choices are:
 
-    1. MIT_
-    2. BSD_
-    3. GPLv3_
-    4. `Apache Software License 2.0`_
-    5. Not open source
+    1. Not open source
+    2. MIT_
+    3. BSD_
+    4. GPLv3_
+    5. `Apache Software License 2.0`_
 
 timezone:
     The value to be used for the ``TIME_ZONE`` setting of the project.
@@ -45,6 +59,18 @@ use_pycharm:
 
 use_docker:
     Indicates whether the project should be configured to use Docker_ and `Docker Compose`_.
+
+use_whitenoise:
+    Indicates whether the project should be configured to use WhiteNoise_.
+
+use_celery:
+    Indicates whether the project should be configured to use Celery_.
+
+keep_local_envs_in_vcs:
+    Indicates whether the project's ``.envs/.local/`` should be kept in VCS
+    (comes in handy when working in teams where local environment reproducibility
+    is strongly encouraged).
+    Note: .env(s) are only utilized when Docker Compose and/or Heroku support is enabled.
 
 postgresql_version:
     Select a PostgreSQL_ version to use. The choices are:
@@ -78,17 +104,11 @@ custom_bootstrap_compilation:
 use_compressor:
     Indicates whether the project should be configured to use `Django Compressor`_.
 
-use_celery:
-    Indicates whether the project should be configured to use Celery_.
-
 use_mailhog:
     Indicates whether the project should be configured to use MailHog_.
 
 use_sentry:
     Indicates whether the project should be configured to use Sentry_.
-
-use_whitenoise:
-    Indicates whether the project should be configured to use WhiteNoise_.
 
 use_heroku:
     Indicates whether the project should be configured so as to be deployable
@@ -96,12 +116,6 @@ use_heroku:
 
 use_travisci:
     Indicates whether the project should be configured to use `Travis CI`_.
-
-keep_local_envs_in_vcs:
-    Indicates whether the project's ``.envs/.local/`` should be kept in VCS
-    (comes in handy when working in teams where local environment reproducibility
-    is strongly encouraged).
-    Note: .env(s) are only utilized when Docker Compose and/or Heroku support is enabled.
 
 debug:
     Indicates whether the project should be configured for debugging.

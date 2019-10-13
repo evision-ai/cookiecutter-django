@@ -15,14 +15,16 @@ RE_OBJ = re.compile(PATTERN)
 @pytest.fixture
 def context():
     return {
-        "project_name": "My Test Project",
-        "project_slug": "my_test_project",
+        "full_name": "eVision Argus Business",
+        "repo_name": "evision-argus-business",
+        "project_namespace": "argus",
+        "project_name": "business",
+        "project_slug": "business",
         "author_name": "Test Author",
         "email": "test@example.com",
         "description": "A short description of the project.",
         "domain_name": "example.com",
         "version": "0.1.0",
-        "timezone": "UTC",
     }
 
 
@@ -101,7 +103,7 @@ def test_project_generation(cookies, context, context_combination):
     result = cookies.bake(extra_context={**context, **context_combination})
     assert result.exit_code == 0
     assert result.exception is None
-    assert result.project.basename == context["project_slug"]
+    assert result.project.basename == context["repo_name"]
     assert result.project.isdir()
 
     paths = build_files_list(str(result.project))
@@ -145,7 +147,7 @@ def test_travis_invokes_pytest(cookies, context):
 
     assert result.exit_code == 0
     assert result.exception is None
-    assert result.project.basename == context["project_slug"]
+    assert result.project.basename == context["repo_name"]
     assert result.project.isdir()
 
     with open(f"{result.project}/.travis.yml", "r") as travis_yml:

@@ -163,7 +163,7 @@ html_static_path = ["_static"]
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "{{ cookiecutter.project_slug }}doc"
+htmlhelp_basename = "{{ cookiecutter.project_namespace }}{{ cookiecutter.project_slug }}doc"
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -182,7 +182,7 @@ latex_elements = {
 latex_documents = [
     (
         "index",
-        "{{ cookiecutter.project_slug }}.tex",
+        "{{ cookiecutter.project_namespace }}-{{ cookiecutter.project_slug }}.tex",
         "{{ cookiecutter.full_name }} Documentation",
         """{{ cookiecutter.author_name }}""",
         "manual",
@@ -217,7 +217,7 @@ latex_documents = [
 man_pages = [
     (
         "index",
-        "{{ cookiecutter.project_slug }}",
+        "{{ cookiecutter.project_namespace }}-{{ cookiecutter.project_slug }}",
         "{{ cookiecutter.full_name }} Documentation",
         ["""{{ cookiecutter.author_name }}"""],
         1,
@@ -236,7 +236,7 @@ man_pages = [
 texinfo_documents = [
     (
         "index",
-        "{{ cookiecutter.project_slug }}",
+        "{{ cookiecutter.project_namespace }}-{{ cookiecutter.project_slug }}",
         "{{ cookiecutter.full_name }} Documentation",
         """{{ cookiecutter.author_name }}""",
         "{{ cookiecutter.full_name }}",

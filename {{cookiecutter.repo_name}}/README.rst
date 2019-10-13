@@ -42,7 +42,7 @@ Running type checks with mypy:
 
 ::
 
-  $ mypy {{cookiecutter.project_slug}}
+  $ mypy {{cookiecutter.project_namespace}}
 
 Test coverage
 ^^^^^^^^^^^^^
@@ -78,7 +78,7 @@ To run a celery worker:
 
 .. code-block:: bash
 
-    cd {{cookiecutter.project_slug}}
+    cd {{cookiecutter.project_namespace}}/{{cookiecutter.project_slug}}
     celery -A config.celery_app worker -l info
 
 Please note: For Celery's import magic to work, it is important *where* the celery commands are run. If you are in the same folder with *manage.py*, you should be right.

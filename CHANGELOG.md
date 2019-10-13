@@ -2,6 +2,10 @@
 All enhancements and patches to Cookiecutter Django will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2019-10-13]
+### Changed
+- add project namespace configuration
+
 ## [2019-10-06]
 ### Changed
 - Default Python version is now 3.7 (@nicolas471)
