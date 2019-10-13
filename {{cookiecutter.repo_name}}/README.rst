@@ -1,5 +1,5 @@
-{{cookiecutter.project_name}}
-{{ '=' * cookiecutter.project_name|length }}
+{{cookiecutter.full_name}}
+{{ '=' * cookiecutter.full_name|length }}
 
 {{cookiecutter.description}}
 

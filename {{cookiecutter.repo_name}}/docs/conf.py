@@ -1,4 +1,4 @@
-# {{ cookiecutter.project_name }} documentation build configuration file, created by
+# {{ cookiecutter.full_name }} documentation build configuration file, created by
 # sphinx-quickstart.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -39,7 +39,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "{{ cookiecutter.project_name }}"
+project = "{{ cookiecutter.full_name }}"
 copyright = """{% now 'utc', '%Y' %}, {{ cookiecutter.author_name }}"""
 
 # The version info for the project you're documenting, acts as replacement for
@@ -183,7 +183,7 @@ latex_documents = [
     (
         "index",
         "{{ cookiecutter.project_slug }}.tex",
-        "{{ cookiecutter.project_name }} Documentation",
+        "{{ cookiecutter.full_name }} Documentation",
         """{{ cookiecutter.author_name }}""",
         "manual",
     )
@@ -218,7 +218,7 @@ man_pages = [
     (
         "index",
         "{{ cookiecutter.project_slug }}",
-        "{{ cookiecutter.project_name }} Documentation",
+        "{{ cookiecutter.full_name }} Documentation",
         ["""{{ cookiecutter.author_name }}"""],
         1,
     )
@@ -237,9 +237,9 @@ texinfo_documents = [
     (
         "index",
         "{{ cookiecutter.project_slug }}",
-        "{{ cookiecutter.project_name }} Documentation",
+        "{{ cookiecutter.full_name }} Documentation",
         """{{ cookiecutter.author_name }}""",
-        "{{ cookiecutter.project_name }}",
+        "{{ cookiecutter.full_name }}",
         """{{ cookiecutter.description }}""",
         "Miscellaneous",
     )
